@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yunus Profesyonel Koç Paneli</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Menü -->
+<div class="menu">
+  <button onclick="showDashboard()">Dashboard</button>
+  <button onclick="showFinance()">Muhasebe</button>
+  <button onclick="showSummary()">Günlük Özet</button>
+  <button class="toggle-btn" onclick="toggleKralMode()">Kral Mod</button>
+</div>
+
+<!-- Dashboard Container -->
+<div id="dashboardContainer">
+  <div class="header">YKS'e Kalan: <span id="countdown"></span></div>
+  <div class="xp-bar">XP: <span id="xpCount">0</span></div>
+  <div class="container" id="tasksContainer"></div>
+</div>
+
+<!-- Finance Container -->
+<div id="financeContainer" style="display:none;">
+  <h2>Muhasebe</h2>
+  <form id="financeForm">
+    <input type="text" id="desc" placeholder="Açıklama" required>
+    <input type="number" id="amount" placeholder="Miktar" required>
+    <select id="type">
+      <option value="income">Gelir</option>
+      <option value="expense">Gider</option>
+    </select>
+    <button type="submit">Ekle</button>
+  </form>
+  <div id="financeList"></div>
+  <div id="totals"></div>
+</div>
+
+<!-- Summary Container -->
+<div id="summaryContainer" style="display:none;">
+  <h2>Günlük Özet</h2>
+  <div id="dailySummary"></div>
+</div>
+
+<script src="dashboard.js"></script>
+<script src="finance.js"></script>
+<script>
+function showDashboard(){
+  document.getElementById('dashboardContainer').style.display='block';
+  document.getElementById('financeContainer').style.display='none';
+  document.getElementById('summaryContainer').style.display='none';
+}
+function showFinance(){
+  document.getElementById('dashboardContainer').style.display='none';
+  document.getElementById('financeContainer').style.display='block';
+  document.getElementById('summaryContainer').style.display='none';
+}
+function showSummary(){
+  document.getElementById('dashboardContainer').style.display='none';
+  document.getElementById('financeContainer').style.display='none';
+  document.getElementById('summaryContainer').style.display='block';
+  loadDailySummary();
+}
+</script>
+</body>
+</html>

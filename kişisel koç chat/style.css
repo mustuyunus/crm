@@ -1,0 +1,133 @@
+/* style.css - Profesyonel Koç Paneli */
+body {
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background:#111;
+    color:white;
+    transition: background 0.3s, color 0.3s;
+}
+.menu {
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    padding:10px;
+    gap:10px;
+    background:#222;
+}
+.menu button {
+    padding:8px 12px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#FF2D2D;
+    color:white;
+    box-shadow:0 0 5px #FF2D2D;
+    transition: all 0.3s;
+}
+.menu button:hover{
+    transform: scale(1.05);
+    box-shadow:0 0 15px #FF2D2D;
+}
+.container {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:20px;
+}
+.day-task {
+    background:#222;
+    color:white;
+    padding:20px;
+    margin:10px;
+    border-radius:20px;
+    width:90%;
+    max-width:500px;
+    box-shadow:0 4px 8px rgba(255,45,45,0.5);
+    transition: all 0.3s;
+    cursor:pointer;
+    border: 2px solid #FF2D2D;
+}
+.day-task.completed {
+    background:#FF2D2D;
+    color:black;
+    box-shadow:0 0 20px #FF2D2D;
+}
+.message {
+    margin-top:10px;
+    font-size:16px;
+    font-style:italic;
+    color:#FF2D2D;
+}
+.toggle-btn {
+    margin-left:auto;
+}
+.kral-mode body {
+    background:black;
+    color:#FF2D2D;
+}
+.kral-mode .day-task {
+    background: #330000;
+    color:white;
+    box-shadow:0 0 20px #FF2D2D;
+    transform: rotate(-1deg);
+    animation: sway 1s infinite alternate;
+}
+@keyframes sway {
+    0% { transform: rotate(-1deg); }
+    100% { transform: rotate(1deg); }
+}
+/* XP Bar */
+.xp-bar {
+    width:90%;
+    max-width:500px;
+    height:25px;
+    background:#222;
+    border-radius:15px;
+    margin:10px;
+    border:2px solid #FF2D2D;
+    overflow:hidden;
+}
+.xp-bar span {
+    display:block;
+    height:100%;
+    background:#FF2D2D;
+    width:0%;
+    transition: width 0.5s;
+}
+/* Finance styles */
+#financeContainer {
+    padding:20px;
+}
+#financeForm input, #financeForm select, #financeForm button {
+    padding:8px;
+    margin:5px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+}
+#financeForm input, #financeForm select {
+    border:2px solid #FF2D2D;
+    background:#222;
+    color:white;
+}
+#financeForm input:focus, #financeForm select:focus {
+    box-shadow:0 0 10px #FF2D2D;
+}
+#financeForm button {
+    background:#FF2D2D;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 5px #FF2D2D;
+}
+#financeList div {
+    background:#222;
+    padding:10px;
+    margin:5px 0;
+    border-radius:10px;
+    border-left:5px solid #FF2D2D;
+}
+/* Summary styles */
+#summaryContainer {
+    padding:20px;
+}
