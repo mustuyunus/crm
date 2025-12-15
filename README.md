@@ -1,2 +1,2 @@
-# crm
-crm proje denemem
+# kişisel koç
+kişisle koçluk proogramı denemem
